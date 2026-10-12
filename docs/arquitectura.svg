@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" role="img" aria-labelledby="title description">
+  <title id="title">Arquitectura de Inca Rail Football</title>
+  <desc id="description">SPA Vue autenticada contra API Laravel y Passport, persistencia Eloquent, y conexión a football-data.org protegida por caché, lock y límite de diez solicitudes por minuto.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#557568"/>
+    </marker>
+    <style>
+      text { font-family: "Segoe UI", Arial, sans-serif; fill: #17362b; }
+      .title { font-size: 28px; font-weight: 700; }
+      .subtitle { font-size: 14px; fill: #60766a; }
+      .heading { font-size: 17px; font-weight: 700; }
+      .body { font-size: 13px; fill: #476054; }
+      .small { font-size: 11px; fill: #60766a; }
+      .box { fill: #ffffff; stroke: #bdd0c4; stroke-width: 2; rx: 16; }
+      .green { fill: #e7f1eb; stroke: #70a084; }
+      .dark { fill: #194b37; stroke: #194b37; }
+      .darktext { fill: #ffffff; }
+      .soft { fill: #f4f8f5; stroke: #d2e0d7; }
+      .arrow { stroke: #557568; stroke-width: 2.2; fill: none; marker-end: url(#arrow); }
+      .arrow-label { font-size: 11px; fill: #4d6c5c; }
+    </style>
+  </defs>
+  <rect width="1280" height="760" fill="#f7faf8"/>
+  <text x="54" y="58" class="title">Inca Rail Football · Arquitectura</text>
+  <text x="54" y="85" class="subtitle">API Laravel 13 + Passport · SPA Vue 3 · persistencia local y sincronización externa controlada</text>
+
+  <rect x="55" y="285" width="190" height="140" class="box green"/>
+  <text x="150" y="325" text-anchor="middle" class="heading">Usuario</text>
+  <text x="150" y="354" text-anchor="middle" class="body">Navegador</text>
+  <text x="150" y="380" text-anchor="middle" class="body">Escritorio / móvil</text>
+
+  <rect x="310" y="250" width="225" height="210" class="box green"/>
+  <text x="422" y="290" text-anchor="middle" class="heading">SPA Vue 3</text>
+  <text x="422" y="320" text-anchor="middle" class="body">Vue Router · vistas responsive</text>
+  <text x="422" y="347" text-anchor="middle" class="body">Token Passport en sesión</text>
+  <text x="422" y="374" text-anchor="middle" class="body">Permisos para adaptar UI</text>
+  <text x="422" y="411" text-anchor="middle" class="small">No contiene la clave del proveedor</text>
+
+  <rect x="600" y="190" width="300" height="335" class="box"/>
+  <text x="750" y="228" text-anchor="middle" class="heading">API Laravel 13</text>
+  <rect x="625" y="250" width="250" height="58" class="box green"/>
+  <text x="750" y="275" text-anchor="middle" class="body">Passport · autenticación</text>
+  <text x="750" y="294" text-anchor="middle" class="small">401 · tokens revocados</text>
+  <rect x="625" y="322" width="250" height="58" class="box green"/>
+  <text x="750" y="347" text-anchor="middle" class="body">ACL · roles y permisos</text>
+  <text x="750" y="366" text-anchor="middle" class="small">autorización en servidor</text>
+  <rect x="625" y="394" width="250" height="92" class="box soft"/>
+  <text x="750" y="421" text-anchor="middle" class="body">Controllers · Form Requests</text>
+  <text x="750" y="444" text-anchor="middle" class="body">Services · API Resources</text>
+  <text x="750" y="467" text-anchor="middle" class="small">FootballDataClient aislado</text>
+
+  <rect x="985" y="145" width="240" height="125" class="box green"/>
+  <text x="1105" y="183" text-anchor="middle" class="heading">Base de datos</text>
+  <text x="1105" y="213" text-anchor="middle" class="body">Eloquent · migraciones</text>
+  <text x="1105" y="238" text-anchor="middle" class="body">ligas · equipos · jugadores · ACL</text>
+
+  <rect x="955" y="335" width="285" height="175" class="box"/>
+  <text x="1097" y="372" text-anchor="middle" class="heading">Caché y límite externo</text>
+  <text x="1097" y="401" text-anchor="middle" class="body">Caché compartida: 5 minutos</text>
+  <text x="1097" y="426" text-anchor="middle" class="body">Lock compartido entre procesos</text>
+  <text x="1097" y="451" text-anchor="middle" class="body">Máximo: 10 peticiones / 60 s</text>
+  <text x="1097" y="482" text-anchor="middle" class="small">Sin reintentos agresivos · fallback local</text>
+
+  <rect x="985" y="585" width="240" height="100" class="box dark"/>
+  <text x="1105" y="623" text-anchor="middle" class="heading darktext">football-data.org</text>
+  <text x="1105" y="651" text-anchor="middle" class="body darktext">Token solo en backend</text>
+
+  <path d="M245 355 H310" class="arrow"/>
+  <path d="M535 355 H600" class="arrow"/>
+  <text x="567" y="340" text-anchor="middle" class="arrow-label">JSON + Bearer</text>
+  <path d="M900 245 H985" class="arrow"/>
+  <text x="943" y="230" text-anchor="middle" class="arrow-label">Eloquent</text>
+  <path d="M900 430 H955" class="arrow"/>
+  <path d="M1097 510 V585" class="arrow"/>
+  <text x="1112" y="552" class="arrow-label">HTTPS + X-Auth-Token</text>
+  <path d="M985 635 H940 V555 H900" class="arrow"/>
+  <text x="951" y="618" text-anchor="end" class="arrow-label">respuesta / errores</text>
+</svg>

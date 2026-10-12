@@ -1,0 +1,17 @@
+flowchart LR
+    USER[Usuario] --> SPA[SPA Vue 3<br/>Vue Router]
+    SPA -->|JSON + Bearer token| API[API Laravel 13]
+    API --> AUTH[Passport<br/>autenticación]
+    API --> ACL[Roles y permisos<br/>autorización servidor]
+    API --> APP[Controladores delgados<br/>Requests + Resources]
+    APP --> SERVICE[Servicios de aplicación]
+    SERVICE -->|Eloquent| DB[(Base de datos relacional)]
+    SERVICE --> CACHE[Caché compartida<br/>respuesta 5 min + lock]
+    CACHE --> LIMIT[Contador coordinado<br/>máximo 10 llamadas / 60 s]
+    LIMIT --> CLIENT[FootballDataClient<br/>timeout + errores]
+    CLIENT -->|X-Auth-Token desde backend| FD[football-data.org]
+    FD --> CLIENT
+    CLIENT --> SERVICE
+    SERVICE --> APP
+    APP --> API
+    API --> SPA
